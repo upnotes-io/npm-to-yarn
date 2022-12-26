@@ -2,31 +2,31 @@ import { useState } from "react";
 import "./App.css";
 import { NPM_TO_YARN } from "./contants/config";
 
-const thottle = (fn:<T extends unknown>(x: T) => void, delay: number) => {
-  let timer: any;
-  const callback = (...args: any) => {
-    if(timer) return;
-    timer = setInterval(()=> {
-      fn.apply({}, args);
-      clearInterval(timer);
-      timer = undefined;
-    }, delay)
-  }
-  return callback;
-}
+// const thottle = (fn:<T extends unknown>(x: T) => void, delay: number) => {
+//   let timer: any;
+//   const callback = (...args: any) => {
+//     if(timer) return;
+//     timer = setInterval(()=> {
+//       fn.apply({}, args);
+//       clearInterval(timer);
+//       timer = undefined;
+//     }, delay)
+//   }
+//   return callback;
+// }
 
-const debounce = (fn: any, delay: number) =>{
-  let timer: any;
-  const callback = (...args: any) => {
-    if(timer){
-      clearTimeout(timer)
-      setTimeout(()=>{
-        fn.apply({}, args);
-      }, delay)
-    }
-  }
-  return callback;
-}
+// const debounce = (fn: any, delay: number) =>{
+//   let timer: any;
+//   const callback = (...args: any) => {
+//     if(timer){
+//       clearTimeout(timer)
+//       setTimeout(()=>{
+//         fn.apply({}, args);
+//       }, delay)
+//     }
+//   }
+//   return callback;
+// }
 
 
 
