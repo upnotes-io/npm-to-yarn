@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { NPM_TO_YARN } from "./contants/config";
 
 const thottle = (fn:<T extends unknown>(x: T) => void, delay: number) => {
   let timer: any;
@@ -28,18 +29,30 @@ const debounce = (fn: any, delay: number) =>{
 }
 
 
+
+
 function App() {
   const [npmCommand, setNpmCommand] = useState('');
   const [yarnCommand, setYarnCommand] = useState('');
   const handleNpmCommandChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNpmCommand(e.target.value);
   }
+
+  const convertToYarn = () => {
+    let npmCommandCopy = npmCommand;
+    Object.keys(NPM_TO_YARN).forEach((key)=> {
+      npmCommandCopy = npmCommandCopy.replace(key, NPM_TO_YARN[key])
+    })
+    setYarnCommand(npmCommandCopy);
+  }
+
   return (
     <div className="App">
       <h2> Npm to yarn convertor </h2>
       <div className="input-container">
-        <textarea placeholder="Input npm command" onChange={handleNpmCommandChange}>{npmCommand}</textarea>
-        <textarea disabled placeholder="Output to yarn"></textarea>
+        <textarea placeholder="Input npm command" onChange={handleNpmCommandChange} value={npmCommand} />
+        <button onClick={convertToYarn}> Click to convert </button>
+        <textarea disabled placeholder="Output to yarn" value={yarnCommand} />
       </div>
     </div>
   );
