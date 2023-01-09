@@ -51,7 +51,7 @@ function App() {
       <h2> Npm to yarn convertor </h2>
       <div className="input-container">
         <textarea placeholder="Input npm command" onChange={handleNpmCommandChange} value={npmCommand} />
-        <button onClick={convertToYarn}> Click to convert </button>
+        <button className="convert-button" onClick={convertToYarn}> Click to convert </button>
         <textarea disabled placeholder="Output to yarn" value={yarnCommand} />
       </div>
     </div>
