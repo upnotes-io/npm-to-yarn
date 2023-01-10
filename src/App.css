@@ -1,5 +1,12 @@
+#root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
+  width: 1000px;
 }
 
 .input-container {
@@ -16,5 +23,14 @@
 
 .convert-button {
   height: 50px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header>a {
+  padding: 10px 15px;
 }
 

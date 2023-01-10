@@ -48,7 +48,11 @@ function App() {
 
   return (
     <div className="App">
-      <h2> Npm to yarn convertor </h2>
+      <header> 
+        <a href="https://github.com/upnotes-io/npm-to-yarn">Github</a>
+        <a href="https://github.com/upnotes-io/npm-to-yarn/issues/1">Report a issue</a>
+      </header>
+      <h2> Npm to yarn convertor (Beta) </h2>
       <div className="input-container">
         <textarea placeholder="Input npm command" onChange={handleNpmCommandChange} value={npmCommand} />
         <button className="convert-button" onClick={convertToYarn}> Click to convert </button>
